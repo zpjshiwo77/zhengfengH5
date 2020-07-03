@@ -159,10 +159,10 @@ a.bgmBtn.sp{
 }
 /* scheduleBox end */
 
-#peopleBox .arrow{
+.peopleBox .arrow{
 	bottom: 0.4rem;
 }
-#peopleBox .cont{
+.peopleBox .cont{
 	position: absolute;
 	top: 50%;
 	left: 0;
@@ -170,34 +170,34 @@ a.bgmBtn.sp{
 	height: 8.4rem;
 	margin-top: -4.2rem;
 }
-#peopleBox .cont .title{
+.peopleBox .cont .title{
 	position: absolute;
 	top: 0;
 	left: 50%;
 	width: 5.14rem;
 	margin-left: -2.57rem;
 }
-#peopleBox .cont .tips{
+.peopleBox .cont .tips{
 	position: absolute;
 	bottom: 0;
 	left: 50%;
 	width: 2.35rem;
 	margin-left: -1.175rem;
 }
-#peopleBox .cont .peoples{
+.peopleBox .cont .peoples{
 	position: absolute;
 	top: 1.35rem;
 	left: 0.29rem;
 	width: 7.21rem;
 	height: 6.25rem;
 }
-#peopleBox .cont .peoples img{
+.peopleBox .cont .peoples img{
 	width: 7.21rem;
 }
-#peopleBox .cont .peoples img.sp{
+.peopleBox .cont .peoples img.sp{
 	transform: translate(100%,0);
 }
-#peopleBox .cont .peoples .block{
+.peopleBox .cont .peoples .block{
 	float: left;
 	width: 25%;
 	height: 33%;
@@ -210,6 +210,7 @@ a.bgmBtn.sp{
 	background: url(../images/video/0.jpg) no-repeat;
 	background-size: cover;
 	background-position: center;
+	z-index: 9999999;
 }
 #videoBox .bulletBox{
 	position: absolute;

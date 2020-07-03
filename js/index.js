@@ -150,9 +150,9 @@ $(document).ready(function () {
 	function load_video() {
 		var loader = new PxLoader();
 		for (var i = 0; i < 429; i++) {
-			loader.addImage('images/video/'+i+'.jpg');
+			loader.addImage('images/video/' + i + '.jpg');
 		}
-		
+
 
 		loader.addCompletionListener(function () {
 			loader = null;
@@ -163,6 +163,7 @@ $(document).ready(function () {
 	var indexBox = $("#indexBox");
 	var scheduleBox = $("#scheduleBox");
 	var peopleBox = $("#peopleBox");
+	var peopleBox1 = $("#peopleBox2");
 	var moreBox = $("#moreBox");
 	var mapBox = $("#mapBox");
 	var recordBox = $("#recordBox");
@@ -234,11 +235,13 @@ $(document).ready(function () {
 
 		scheduleBox.on("swipeup", showPeopleBox);
 
-		p1.on("swipeleft", showPeople2);
-		p2.on("swiperight", showPeople1);
+		// p1.on("swipeleft", showPeople2);
+		// p2.on("swiperight", showPeople1);
 		peopleBox.on("click", ".block", showPeopleDetail);
+		peopleBox1.on("click", ".block", showPeopleDetail);
 
-		peopleBox.on("swipeup", showMoreBox);
+		peopleBox.on("swipeup", showPeopleBox1);
+		peopleBox1.on("swipeup", showMoreBox);
 
 		mapBox.find(".btn").on("touchend", showFormBox);
 
@@ -266,7 +269,7 @@ $(document).ready(function () {
 			$(this).css("color", "#000000");
 		});
 
-		areaBox.find(".btn").on("touchend", showChoseBox);
+		areaBox.find(".btn").on("touchend", backToResultBox);
 
 		rankBox.find(".hearBtn").on("touchend", showChoseBox);
 
@@ -278,6 +281,14 @@ $(document).ready(function () {
 	}
 
 	/**
+	 * 返回结果页面
+	 */
+	function backToResultBox() {
+		icom.fadeIn(resultBox);
+		icom.fadeOut(areaBox);
+	}
+
+	/**
 	 * 显示我的语音页面
 	 */
 	function showMyAudioBox() {
@@ -286,6 +297,7 @@ $(document).ready(function () {
 			if (data.code == 0) {
 				var info = JSON.parse(data.msg);
 				myAudioBox.find(".audioblock").attr("data-val", 'https://wechat.dhteam.net/lillysec/' + info[0].mp3Url);
+				ibgm.pause();
 			}
 		})
 	}
@@ -300,12 +312,12 @@ $(document).ready(function () {
 			loadBox.show();
 			var data = {
 				pageindex: 1,
-				pagesize: 50,
+				pagesize: 5,
 				province: province
 			}
 			API.SelVoice(data, function (res) {
 				if (res.code == "0") {
-					renderAreaBox(res.msg);
+					renderAreaBox(res.msg, province);
 					resultBox.hide();
 					rankBox.hide();
 					areaBox.show();
@@ -320,7 +332,7 @@ $(document).ready(function () {
 	/**
 	 * 渲染地区的页面
 	 */
-	function renderAreaBox(data) {
+	function renderAreaBox(data, province) {
 		var list = JSON.parse(data);
 		var box = $("#areaScroll .scroll");
 		var cont = "";
@@ -331,6 +343,7 @@ $(document).ready(function () {
 		}
 
 		box.empty().append(cont);
+		areaBox.find(".word").html("地域：" + province);
 	}
 
 	/**
@@ -570,17 +583,21 @@ $(document).ready(function () {
 	function showVideoBox() {
 		videoBox.show();
 		myVideo = $("#myVideo");
+		ibgm.pause();
 		myVideo.VP({
 			debug: false,
 			autoPlay: true,
 			total: 428,
 			time: 28,
+			// audio:"audio/bgm.mp3",
+			// mode: 2,
 			path: "images/video/",
 			onPlay: function () {
 				console.log('onPlay gif');
 			},
 			onEnd: function () {
 				showMapBox();
+				ibgm.play();
 			}
 		});
 		bulletInit();
@@ -645,7 +662,14 @@ $(document).ready(function () {
 	 * 显示更多的页面
 	 */
 	function showMoreBox() {
-		pageTransition(peopleBox, moreBox);
+		pageTransition(peopleBox1, moreBox);
+	}
+
+	/**
+	 * 显示人物页面
+	 */
+	function showPeopleBox1() {
+		pageTransition(peopleBox, peopleBox1);
 	}
 
 	/**
