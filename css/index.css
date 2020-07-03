@@ -27,7 +27,8 @@ section{
     position: fixed;
     top:0;
     left: 0;
-    z-index: 3;
+	z-index: 3;
+	background-color: #ececec;
 }
 aside{
 	position: fixed;
@@ -46,20 +47,720 @@ aside{
     height: 100%;
 }
 img{
-	/* pointer-events: none; */
+	pointer-events: none;
+}
+.logo{
+	position: absolute;
+	top: 0.34rem;
+	left: 0.32rem;
+	width: 0.87rem;
+	z-index: 99;
+}
+.logo2{
+	position: absolute;
+	top: 0.34rem;
+	right: 0.32rem;
+	width: 2.42rem;
+	z-index: 99;
+}
+.arrow{
+	position: absolute;
+	left: 50%;
+	width: 0.83rem;
+	margin-left: -0.415rem;
+	-webkit-animation: updowning 1.5s ease infinite;
+	z-index: 9;
+}
+section .bg{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.audioblock{
+	width: 4.92rem;
+	height: 0.9rem;
+	position: relative;
+}
+.audioblock .audio{
+	position: absolute;
+	top: 0.15rem;
+	left: 0.47rem;
+	width: 0.57rem;
+	height: 0.49rem;
+	background-image: url(../images/resultBox/audio.png);
+	background-size: 0.57rem 1.47rem;
+	background-position: 0 -0.98rem;
+}
+a.bgmBtn.sp{
+	top: 1.1rem;
 }
 /* public end */
 
-.lighting{
-	-webkit-animation: lighting 3s ease infinite;
-}
-@-webkit-keyframes lighting{
-	0%{opacity: 0.3;}
-	50%{opacity: 1;}
-	100%{opacity: 0.3;}
+@-webkit-keyframes updowning{
+	0%{transform: translate(0, -0.1rem);}
+	50%{transform: translate(0, 0.1rem);}
+	100%{transform: translate(0, -0.1rem);}
 }
 /* anime end */
 
+#indexBox{
+	background-color: #ececec;
+}
+#indexBox .bg{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+#indexBox .cont{
+	position: absolute;
+	top: 45%;
+	left: 0;
+	width: 100%;
+	height: 6.5rem;
+	margin-top: -3.25rem;
+}
+#indexBox .cont .title{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 5.88rem;
+	margin-left: -2.94rem;
+}
+#indexBox .cont .tips1{
+	position: absolute;
+	top: 3.5rem;
+	left: 50%;
+	width: 4.48rem;
+	margin-left: -2.24rem;
+}
+#indexBox .cont .tips2{
+	position: absolute;
+	top: 6.05rem;
+	left: 50%;
+	width: 3rem;
+	margin-left: -1.5rem;
+}
+#indexBox .cont .arrow{
+	top: 4.5rem;
+}
+/* indexBox end */
+
+#scheduleBox .arrow{
+	bottom: 0.4rem;
+}
+#scheduleBox .date{
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	width: 6.63rem;
+	transform: translate(-50%, -50%);
+}
+/* scheduleBox end */
+
+#peopleBox .arrow{
+	bottom: 0.4rem;
+}
+#peopleBox .cont{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 8.4rem;
+	margin-top: -4.2rem;
+}
+#peopleBox .cont .title{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 5.14rem;
+	margin-left: -2.57rem;
+}
+#peopleBox .cont .tips{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 2.35rem;
+	margin-left: -1.175rem;
+}
+#peopleBox .cont .peoples{
+	position: absolute;
+	top: 1.35rem;
+	left: 0.29rem;
+	width: 7.21rem;
+	height: 6.25rem;
+}
+#peopleBox .cont .peoples img{
+	width: 7.21rem;
+}
+#peopleBox .cont .peoples img.sp{
+	transform: translate(100%,0);
+}
+#peopleBox .cont .peoples .block{
+	float: left;
+	width: 25%;
+	height: 33%;
+	position: relative;
+	z-index: 99;
+}
+/* peopleBox end */
+
+#videoBox{
+	background: url(../images/video/0.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#videoBox .bulletBox{
+	position: absolute;
+	top: 1.5rem;
+	width: 100%;
+	height: auto;
+}
+#videoBox .bulletBox .bullet{
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	left: 0;
+	width: auto;
+	padding: 0.1rem 0.5rem;
+	background-color: rgba(255,255,255,0.8);
+	border: 0.02rem solid #dd382a;
+	font-size: 0.26rem;
+	color: #414141;
+	border-radius: 0.4rem;
+	transform: translate(7.5rem,0);
+}
+/* videoBox end */
+
+#peopleDetail{
+	background-color: #ececec;
+}
+#peopleDetail .close{
+	position: absolute;
+	bottom: 0.43rem;
+	right: 0.3rem;
+	width: 1.61rem;
+	height: 0.61rem;
+}
+#peopleDetail .bg{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+#peopleDetail .pattern{
+	position: absolute;
+	bottom: 0.4rem;
+	left: 0;
+	width: 7.08rem;
+}
+#peopleDetail .detail{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	margin-top: -5rem;
+}
+/* peopleDetail end */
+
+#moreBox .cont{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 4.8rem;
+	margin-top: -2.4rem;
+}
+#moreBox .cont .title{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 5.62rem;
+	margin-left: -2.81rem;
+}
+#moreBox .cont .tips{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 3.03rem;
+	margin-left: -1.515rem;
+}
+#moreBox .cont .btn{
+	position: absolute;
+	top: 2.6rem;
+	left: 50%;
+	width: 1.6rem;
+	height: 1.02rem;
+	margin-left: -0.8rem;
+}
+/* moreBox end */
+
+#mapBox .cont{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 8.64rem;
+	margin-top: -4.32rem;
+}
+#mapBox .cont .title{
+	position: absolute;
+	top: 0;
+	left: 0.53rem;
+	width: 5.89rem;
+}
+#mapBox .cont .map{
+	position: absolute;
+	top: 2.22rem;
+	left: 0.53rem;
+	width: 6.52rem;
+}
+#mapBox .cont .btn{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 3.04rem;
+	height: 0.84rem;
+	margin-left: -1.52rem;
+}
+/* mapBox end */
+
+#recordBox #recordBtn{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 2.93rem;
+	height: 3.69rem;
+	transform: translate(-50%, -50%);
+}
+#recordBox .cont{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 8.4rem;
+	margin-top: -4.2rem;
+}
+#recordBox .cont .word{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 3.08rem;
+	margin-left: -1.54rem;
+}
+#endRecordBtn{
+	top: 4.19rem;
+	left: 50%;
+	width: 1.37rem;
+	height: 1.8rem;
+	transform: translate(-50%, 0);
+}
+#recordBox .cont .btnBox{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 5.2rem;
+	margin-left: -2.6rem;
+}
+#recordBox .cont .btnBox .btn{
+	float: left;
+	width: 2.25rem;
+	height: 0.69rem;
+	position: relative;
+}
+#recordBox .cont .btnBox .btn:last-child{
+	float: right;
+}
+/* recordBox end */
+
+#shareBox .share{
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	width: 6.4rem;
+}
+/* shareBox end */
+
+#resultBox .cont{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 7rem;
+	margin-top: -3.5rem;
+}
+#resultBox .cont .audioblock{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -2.46rem;
+}
+#resultBox .cont .btns{
+	position: absolute;
+	top: 1.7rem;
+	left: 50%;
+	width: 4.7rem;
+	margin-left: -2.35rem;
+}
+#resultBox .cont .btns .btn{
+	float: left;
+	width: 1.78rem;
+	height: 0.66rem;
+	position: relative;
+}
+#resultBox .cont .btns .btn:last-child{
+	float: right;
+}
+#resultBox .cont .btnBox{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 5.6rem;
+	margin-left: -2.8rem;
+}
+#resultBox .cont .btnBox .btn{
+	float: left;
+	width: 2.81rem;
+	height: 0.69rem;
+	position: relative;
+}
+#resultBox .cont .btnBox .btn:last-child{
+	float: right;
+	width: 2.25rem;
+}
+/* resultBox end */
+
+#areaBox .cont{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 7.6rem;
+	margin-top: -3.8rem;
+}
+#areaBox .cont .title{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 4.03rem;
+	height: 0.5rem;
+	margin-left: -2.015rem;
+}
+#areaBox .cont .title .word{
+	width: 2.3rem;
+	height: 0.5rem;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 0.5rem;
+	color: #fff;
+	font-size: 0.3rem;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+#areaBox .cont .btn{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 3.04rem;
+	height: 0.84rem;
+	margin-left: -1.52rem;
+}
+#areaScroll{
+	position: absolute;
+	top: 1.2rem;
+	left: 0.9rem;
+	right: 0.9rem;
+	bottom: 1.2rem;
+	overflow: hidden;
+}
+#areaScroll .scroll{
+	width: 100%;
+}
+#areaScroll .block{
+	width: 100%;
+	height: 0.55rem;
+	margin-bottom: 0.35rem;
+}
+#areaScroll .block .name{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 2.5rem;
+	height: 0.55rem;
+	line-height: 0.55rem;
+	font-size: 0.28rem;
+	color: #505050;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+#areaScroll .block .audioblock{
+	position: absolute;
+	right: 0;
+	transform-origin: top right;
+	transform: scale(0.6,0.6);
+}
+/* areaBox end */
+
+#rankBox .cont{
+	position: absolute;
+	top: 53%;
+	left: 0;
+	width: 100%;
+	height: 8.8rem;
+	margin-top: -4.4rem;
+}
+#rankBox .cont .title{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 4.1rem;
+	height: 1.25rem;
+	margin-left: -2.05rem;
+}
+#rankBox .cont .title2{
+	position: absolute;
+	top: 1.6rem;
+	left: 50%;
+	width: 6.29rem;
+	height: 0.53rem;
+	margin-left: -3.15rem;
+}
+#rankBox .cont .btnBox{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 5.6rem;
+	margin-left: -2.8rem;
+}
+#rankBox .cont .btnBox .btn{
+	float: left;
+	width: 2.81rem;
+	height: 0.69rem;
+	position: relative;
+}
+#rankBox .cont .btnBox .btn:last-child{
+	float: right;
+	width: 2.25rem;
+}
+#rankScroll{
+	position: absolute;
+	top: 2.4rem;
+	left: 0.6rem;
+	right: 0.6rem;
+	bottom: 1.4rem;
+	overflow: hidden;
+}
+#rankScroll .scroll{
+	width: 100%;
+}
+#rankScroll .block{
+	width: 100%;
+	height: 0.45rem;
+}
+#rankScroll .block .rank{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1.08rem;
+	height: 0.45rem;
+	font-size: 0.25rem;
+	text-align: center;
+	color: #505050;
+}
+#rankScroll .block .name{
+	position: absolute;
+	left: 1.5rem;
+	top: 0;
+	width: 1.73rem;
+	height: 0.45rem;
+	font-size: 0.25rem;
+	text-align: center;
+	color: #505050;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+#rankScroll .block .area{
+	position: absolute;
+	left: 3.4rem;
+	top: 0;
+	width: 1.45rem;
+	height: 0.45rem;
+	font-size: 0.25rem;
+	text-align: center;
+	color: #505050;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+#rankScroll .block .audioblock{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 1.18rem;
+	height: 0.39rem;
+}
+#rankScroll .block .audioblock .audio{
+	position: absolute;
+	top: 0.06rem;
+	left: 0.1rem;
+	transform-origin: top left;
+	transform: scale(0.5,0.5);
+}
+/* rankBox end */
+
+#myAudioBox .cont{
+	position: absolute;
+	top: 45%;
+	left: 0;
+	width: 100%;
+	height: 7rem;
+	margin-top: -3.5rem;
+}
+#myAudioBox .title{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 4.1rem;
+	margin-left: -2.05rem;
+}
+#myAudioBox .audioblock{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#myAudioBox .logo3{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 4.57rem;
+	margin-left: -2.285rem;
+}
+/* myAudioBox end */
+
+#choseBox .cont{
+	position: absolute;
+	top: 45%;
+	left: 0;
+	width: 100%;
+	height: 2.4rem;
+	margin-top: -1.2rem;
+}
+#choseBox .box{
+	width: 6rem;
+	height: 0.7rem;
+	margin: 0 auto 0.7rem;
+}
+#choseBox .cont .label{
+	float: left;
+	width: 3.8rem;
+	height: 0.8rem;
+	margin: 0 auto 0.8rem;
+	background-color: #fff;
+	border-radius: 0.8rem;
+}
+#choseBox .cont .label select{
+	width: 80%;
+	height: 100%;
+	font-size: 0.41rem;
+	color: #a5a5a5;
+	position: relative;
+	left: 10%;
+}
+#choseBox .cont .label.select:after{
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0.3rem;
+	top: 0.32rem;
+	width: 0.35rem;
+	height: 0.21rem;
+	background-image: url(../images/formBox/ar.png);
+	background-size: 100%;
+}
+#choseBox .cont .btn1{
+	float: right;
+	width: 1.85rem;
+	height: 0.81rem;
+	position: relative;
+}
+#choseBox .cont .btn2{
+	width: 3.81rem;
+	height: 0.82rem;
+	position: relative;
+	margin: 0 auto;
+}
+/* choseBox end */
+
+#formBox .cont{
+	position: absolute;
+	top: 45%;
+	left: 0;
+	width: 100%;
+	height: 7rem;
+	margin-top: -3.5rem;
+}
+#formBox .cont .label{
+	width: 4.9rem;
+	height: 0.8rem;
+	margin: 0 auto 0.8rem;
+	background-color: #fff;
+	border-radius: 0.8rem;
+}
+#formBox .cont .label input{
+	width: 80%;
+	height: 100%;
+	font-size: 0.41rem;
+	position: relative;
+	left: 10%;
+}
+#formBox .cont .label input::-webkit-input-placeholder{
+	color: #a5a5a5;
+}
+#formBox .cont .label select{
+	width: 80%;
+	height: 100%;
+	font-size: 0.41rem;
+	color: #a5a5a5;
+	position: relative;
+	left: 10%;
+}
+#formBox .cont .label.select:after{
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0.3rem;
+	top: 0.32rem;
+	width: 0.35rem;
+	height: 0.21rem;
+	background-image: url(../images/formBox/ar.png);
+	background-size: 100%;
+}
+#formBox .btns{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 5.34rem;
+	height: 0.84rem;
+	margin-left: -2.67rem;
+}
+#formBox .btns .btn{
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+/* formBox end */
+
+#myAudio{
+	position: absolute;
+	left: -1000px;
+	top: -1000px
+}
+/* myAudio end */
 /*---------------------------------------- 15:9 ----------------------*/
 
 /*---------------------------------------- 16:9 ----------------------*/

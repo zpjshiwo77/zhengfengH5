@@ -14,19 +14,260 @@
 <script>
 ibase.init();
 ibase.load('css/index.css');//无缓存加载文件
+ibase.load('css/anime.css');//无缓存加载文件
 </script>
 </head>
 <body>
 <!--------------------------------------------------------------html区域-------------------------------------------------------------------------------------------->
-<article style="display: none;">
-	
+<article style="display: none;" class="noSelect">
+	<section id="indexBox" class="">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/indexBox/bg.jpg" class="bg">
+        <div class="cont">
+            <img src="images/indexBox/title.png" class="title">
+            <img src="images/indexBox/tips1.png" class="tips1">
+            <img src="images/common/ar.png" class="arrow">
+            <img src="images/indexBox/tips2.png" class="tips2">
+        </div>
+    </section>
+
+    <section id="scheduleBox" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/common/logo2.png" class="logo2">
+        <img src="images/common/bg.jpg" class="bg">
+        <img src="images/common/ar.png" class="arrow">
+        <img src="images/scheduleBox/date.png" class="date">
+    </section>
+
+    <section id="peopleBox" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/common/logo2.png" class="logo2">
+        <img src="images/common/bg.jpg" class="bg">
+        <img src="images/common/ar.png" class="arrow">
+        <div class="cont">
+            <img src="images/peopleBox/title.png" alt="" class="title">
+            <div class="peoples">
+                <div class="p1 full">
+                    <img src="images/peopleBox/p1.png" class="full">
+                </div>
+                <div class="p2 full" style="transform: translate(100%,0);">
+                    <img src="images/peopleBox/p2.png" class="full">
+                </div>
+            </div>
+            <img src="images/peopleBox/tips.png" alt="" class="tips">
+        </div>
+    </section>
+
+    <section id="moreBox" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/common/logo2.png" class="logo2">
+        <img src="images/indexBox/bg.jpg" class="bg">
+        <div class="cont">
+            <img src="images/videoBox/title.png" class="title">
+            <div class="btn limitBtn breathing" id="videoBtn">
+                <img src="images/videoBox/btn.png" class="full">
+            </div>
+            <img src="images/videoBox/tips.png" class="tips">
+        </div>
+    </section>
+
+    <section id="mapBox" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/common/logo2.png" class="logo2">
+        <img src="images/mapBox/bg.jpg" class="bg">
+        <div class="cont">
+            <img src="images/mapBox/title.png" class="title">
+            <img src="images/mapBox/map.png" class="map">
+            <div class="btn limitBtn breathing">
+                <img src="images/mapBox/btn.png" class="full">
+            </div>
+        </div>
+    </section>
+
+    <section id="recordBox" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/common/logo2.png" class="logo2">
+        <div class="startRecord full ">
+            <img src="images/mapBox/bg.jpg" class="bg">
+            <div id="recordBtn" class="limitBtn">
+                <img src="images/recordBox/start.png" class="full">
+            </div>
+        </div>
+        <div class="endRecord full none">
+            <img src="images/recordBox/bg.jpg" class="bg">
+            <div class="cont">
+                <img src="images/recordBox/word.png" alt="" class="word">
+                <div id="endRecordBtn" class="limitBtn">
+                    <img src="images/recordBox/end.png" class="full">
+                </div>
+                <div class="btnBox">
+                    <div class="btn limitBtn againBtn"><img src="images/recordBox/again.png" class="full"></div>
+                    <div class="btn limitBtn okBtn"><img src="images/recordBox/ok.png" class="full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resultBox" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/common/logo2.png" class="logo2">
+        <img src="images/recordBox/bg.jpg" class="bg">
+        <div class="cont">
+            <div class="audioblock">
+                <img src="images/resultBox/di.png" class="full">
+                <div class="audio "></div>
+            </div>
+            <div class="btns">
+                <div class="btn limitBtn againBtn"><img src="images/resultBox/again.png" class="full"></div>
+                <div class="btn limitBtn okBtn"><img src="images/resultBox/ok.png" class="full"></div>
+            </div>
+            <div class="btnBox">
+                <div class="btn limitBtn moreBtn"><img src="images/resultBox/b1.png" class="full"></div>
+                <div class="btn limitBtn shareBtn"><img src="images/resultBox/b2.png" class="full"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="areaBox" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/common/logo2.png" class="logo2">
+        <img src="images/common/bg.jpg" class="bg">
+        <div class="cont">
+            <div class="title">
+                <img src="images/areaBox/title.png" class="full">
+                <div class="word">地域：上海市</div>
+            </div>
+            <div id="areaScroll">
+                <div class="scroll">
+                    <!-- <div class="block">
+                        <div class="name">1.blace</div>
+                        <div class="audioblock">
+                            <img src="images/resultBox/di.png" class="full">
+                            <div class="audio "></div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="btn limitBtn">
+                <img src="images/areaBox/backBtn.png" class="full">
+            </div>
+        </div>
+    </section>
+
+    <section id="rankBox" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/common/logo2.png" class="logo2">
+        <img src="images/common/bg.jpg" class="bg">
+        <div class="cont">
+            <img src="images/rankBox/title.png" alt="" class="title">
+            <img src="images/rankBox/t.png" alt="" class="title2">
+            <div id="rankScroll">
+                <div class="scroll">
+                    <!-- <div class="block">
+                        <div class="rank">1</div>
+                        <div class="name">blace</div>
+                        <div class="area">北京</div>
+                        <div class="audioblock">
+                            <img src="images/rankBox/block.png" class="full">
+                            <div class="audio"></div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="btnBox">
+                <div class="btn limitBtn hearBtn"><img src="images/resultBox/b1.png" class="full"></div>
+                <div class="btn limitBtn shareBtn"><img src="images/resultBox/b2.png" class="full"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="myAudioBox" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/recordBox/bg.jpg" class="bg">
+
+        <div class="cont">
+            <img src="images/myAudioBox/title.png" alt="" class="title">
+            <div class="audioblock">
+                <img src="images/resultBox/di.png" class="full">
+                <div class="audio "></div>
+            </div>
+            <img src="images/myAudioBox/logo.png" alt="" class="logo3">
+        </div>
+    </section>
+
+    <aside id="videoBox" class="none">
+        <div id="myVideo" class="full"></div>
+        <div class="bulletBox">
+            <!-- <div class="bullet">沈小乐 对 金圈圈表白了</div> -->
+        </div>
+    </aside>
+    
+    <aside id="choseBox" class="none">
+        <div class="cont">
+            <div class="box">
+                <div class="label select">
+                    <select id="provinceC">
+                        <option value="x" selected="selected" disabled="disabled">选择省份</option>
+                    </select>
+                </div>
+                <div class="btn1 limitBtn" id="choseBtn">
+                    <img src="images/formBox/ok.png" class="full">
+                </div>
+            </div>
+            <div class="btn2 limitBtn" id="allBtn">
+                <img src="images/formBox/more.png" class="full">
+            </div>
+        </div>
+    </aside>
+
+    <aside id="formBox" class="none">
+        <div class="cont">
+            <div class="label">
+                <input type="text" id="name" placeholder="请输入姓名">
+            </div>
+            <div class="label select">
+                <select id="province">
+                    <option value="x" selected="selected" disabled="disabled">选择省份</option>
+                </select>
+            </div>
+            <div class="btns">
+                <img src="images/formBox/btns.png" class="full">
+                <div class="btn limitBtn okBtn"></div>
+                <div class="btn limitBtn closeBtn"></div>
+            </div>
+        </div>
+    </aside>
+
+    <aside id="peopleDetail" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/common/logo2.png" class="logo2">
+        <img src="images/common/bg.jpg" class="bg">
+        <img src="images/peopleBox/pattern.png" class="pattern">
+        <img src="images/peopleBox/people/ayyc.png" alt="" class="detail">
+        <a class="close">
+            <img src="images/peopleBox/close.png" class="full">
+        </a>
+    </aside>
+
+    <aside id="shareBox" class="none">
+        <img src="images/common/share.png" class="share">
+    </aside>
+
+    <audio id="myAudio"></audio>
 </article>
 <!--------------------------------------------------------------javascript区域-------------------------------------------------------------------------------------->
 <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
 <script src="js/base/jquery.js"></script>
 <script src="js/base/framwork.js"></script>
+<script src="js/base/swipe.js"></script>
 <script src="js/base/monitor.js"></script>
-<script src="js/base/wxUser.js"></script>
+<script src="js/base/wxUser.js?v=2"></script>
+<script src="js/base/audio.js"></script>
+<script src="js/plugs/API.js"></script>
+<script src="js/plugs/iscroll.js"></script>
+<script src="js/plugs/annieCore.min.js"></script>
+<script src="js/plugs/jquery.VP.min.js"></script>
+<script src="js/form/citydata.js"></script>
 <script>ibase.load('js/index.js');</script>
 </body>
 </html>

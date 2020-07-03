@@ -12,7 +12,7 @@ function WxUser() {
     var dominUrl, shareInfo;
     var appId = "wxf51a06ff7222539a";
     var imonitor = window.imonitor || {};
-    var jsdkAPI = 'https://scrm2.beats-digital.com/scrm/api/getconfig';
+    var jsdkAPI = 'https://wechat.dhteam.net/lillysec/Wapi/getwxconfig.ashx';
     var authAPI = 'http://t.phper.be-xx.com/invisalign/index.php';
 
     var returnUserInfo = null;
@@ -45,8 +45,11 @@ function WxUser() {
             appid: appId
         };
 
-        $.get(jsdkAPI, data, function (data) {
-            wxShareConfig(data.data, shareInfo);
+        $.get(jsdkAPI, data, function (data) {            
+            if (data.code == 0) {
+                var obj = JSON.parse(data.msg);
+                wxShareConfig(obj, shareInfo);
+            }
         }, 'JSON')
     }
 
@@ -121,6 +124,7 @@ function WxUser() {
     function _sharInfoInit() {
         var hrefs = window.location.href.split('?');
         dominUrl = hrefs[0].substr(0, hrefs[0].lastIndexOf('/') + 1);
+        _self.dominUrl = dominUrl;
 
         shareInfo = {
             link: dominUrl,
@@ -203,7 +207,7 @@ function WxUser() {
         }
         else if (type == "Oath-getInfo") {
             var userInfo = localStorage.userInfo;
-            var time = Date.now() - localStorage.userTime;     
+            var time = Date.now() - localStorage.userTime;
             if (userInfo && time <= TIME_USERINFO) {
                 // userInfo = eval('(' + userInfo + ')');
                 if (returnUserInfo) returnUserInfo(JSON.parse(userInfo));
@@ -243,7 +247,7 @@ function WxUser() {
                     else if (type == "Oath-getInfo") _saveUserInfo(sucRes.data);
                 }
             },
-            fail: function(failRes){
+            fail: function (failRes) {
                 icom.alert(JSON.stringify(failRes));
             }
         });

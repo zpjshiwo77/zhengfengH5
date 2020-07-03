@@ -1,0 +1,25 @@
+.lighting{
+	-webkit-animation: lighting 3s ease infinite;
+}
+@-webkit-keyframes lighting{
+	0%{opacity: 0.3;}
+	50%{opacity: 1;}
+	100%{opacity: 0.3;}
+}
+
+.breathing{
+	-webkit-animation: breathing 1.5s ease infinite;
+}
+@-webkit-keyframes breathing{
+	0%{transform: scale(1,1);}
+	50%{transform: scale(1.1,1.1);}
+	100%{transform: scale(1,1);}
+}
+
+.playing{
+	-webkit-animation: playing 1.5s steps(3) infinite;
+}
+@-webkit-keyframes playing{
+	0%{background-position: 0 0;}
+	100%{background-position: 0 -1.47rem;}
+}
