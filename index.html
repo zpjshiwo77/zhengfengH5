@@ -24,10 +24,10 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/common/logo.png" class="logo">
         <img src="images/indexBox/bg.jpg" class="bg">
         <div class="cont">
-            <img src="images/indexBox/title.png" class="title">
-            <img src="images/indexBox/tips1.png" class="tips1">
+            <img src="images/indexBox/title.png" class="title hide scaleing">
+            <img src="images/indexBox/tips1.png" class="tips1 hide showing2">
             <img src="images/common/ar.png" class="arrow">
-            <img src="images/indexBox/tips2.png" class="tips2">
+            <img src="images/indexBox/tips2.png" class="tips2 hide showing3">
         </div>
     </section>
 
@@ -36,7 +36,7 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/common/logo2.png" class="logo2">
         <img src="images/common/bg.jpg" class="bg">
         <img src="images/common/ar.png" class="arrow">
-        <img src="images/scheduleBox/date.png" class="date">
+        <img src="images/scheduleBox/date.png?v=2" class="date showing1 hide">
     </section>
 
     <section id="peopleBox" class="none peopleBox">
@@ -45,14 +45,14 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/common/bg.jpg" class="bg">
         <img src="images/common/ar.png" class="arrow">
         <div class="cont">
-            <img src="images/peopleBox/title.png" alt="" class="title">
-            <div class="peoples">
+            <img src="images/peopleBox/title.png" alt="" class="title hide showing2">
+            <div class="peoples hide showing3">
                 <div class="p1 full">
-                    <img src="images/peopleBox/p1.png" class="full">
+                    <img src="images/peopleBox/p1.png?v=3" class="full">
                 </div>
                 
             </div>
-            <img src="images/peopleBox/tips.png" alt="" class="tips">
+            <img src="images/peopleBox/tips.png" alt="" class="tips hide showing3">
         </div>
     </section>
 
@@ -62,13 +62,13 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/common/bg.jpg" class="bg">
         <img src="images/common/ar.png" class="arrow">
         <div class="cont">
-            <img src="images/peopleBox/title.png" alt="" class="title">
-            <div class="peoples">
+            <img src="images/peopleBox/title.png" alt="" class="title hide showing2">
+            <div class="peoples hide showing3">
                 <div class="p2 full">
                     <img src="images/peopleBox/p2.png" class="full">
                 </div>
             </div>
-            <img src="images/peopleBox/tips.png" alt="" class="tips">
+            <img src="images/peopleBox/tips.png" alt="" class="tips hide showing3">
         </div>
     </section>
 
@@ -77,11 +77,11 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/common/logo2.png" class="logo2">
         <img src="images/indexBox/bg.jpg" class="bg">
         <div class="cont">
-            <img src="images/videoBox/title.png" class="title">
+            <img src="images/videoBox/title.png" class="title hide scaleing">
             <div class="btn limitBtn breathing" id="videoBtn">
                 <img src="images/videoBox/btn.png" class="full">
             </div>
-            <img src="images/videoBox/tips.png" class="tips">
+            <img src="images/videoBox/tips.png" class="tips hide showing3">
         </div>
     </section>
 
@@ -91,7 +91,8 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/mapBox/bg.jpg" class="bg">
         <div class="cont">
             <img src="images/mapBox/title.png" class="title">
-            <img src="images/mapBox/map.png" class="map">
+            <img src="images/mapBox/map.png?v=2" class="map">
+            <img src="images/mapBox/ar.png" class="map updowning2">
             <div class="btn limitBtn breathing">
                 <img src="images/mapBox/btn.png" class="full">
             </div>
@@ -189,8 +190,8 @@ ibase.load('css/anime.css');//无缓存加载文件
                 </div>
             </div>
             <div class="btnBox">
-                <div class="btn limitBtn hearBtn"><img src="images/resultBox/b1.png" class="full"></div>
-                <div class="btn limitBtn shareBtn"><img src="images/resultBox/b2.png" class="full"></div>
+                <div class="btn limitBtn shareBtn"><img src="images/rankBox/b1.png" class="full"></div>
+                <div class="btn limitBtn hearBtn"><img src="images/rankBox/b2.png" class="full"></div>
             </div>
         </div>
     </section>
@@ -221,7 +222,7 @@ ibase.load('css/anime.css');//无缓存加载文件
             <div class="box">
                 <div class="label select">
                     <select id="provinceC">
-                        <option value="x" selected="selected" disabled="disabled">选择省份</option>
+                        <option value="x" selected="selected" disabled="disabled">选择城市</option>
                     </select>
                 </div>
                 <div class="btn1 limitBtn" id="choseBtn">
@@ -241,7 +242,7 @@ ibase.load('css/anime.css');//无缓存加载文件
             </div>
             <div class="label select">
                 <select id="province">
-                    <option value="x" selected="selected" disabled="disabled">选择省份</option>
+                    <option value="x" selected="selected" disabled="disabled">选择城市</option>
                 </select>
             </div>
             <div class="btns">
@@ -272,8 +273,7 @@ ibase.load('css/anime.css');//无缓存加载文件
 <!--------------------------------------------------------------javascript区域-------------------------------------------------------------------------------------->
 <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
 <script src="js/base/jquery.js"></script>
-<script src="js/base/framwork.js"></script>
-<script src="js/base/swipe.js"></script>
+<script src="js/base/framwork.js?v=2"></script>
 <script src="js/base/monitor.js"></script>
 <script src="js/base/wxUser.js?v=2"></script>
 <script src="js/base/audio.js"></script>
@@ -281,7 +281,6 @@ ibase.load('css/anime.css');//无缓存加载文件
 <script src="js/plugs/iscroll.js"></script>
 <script src="js/plugs/annieCore.min.js"></script>
 <script src="js/plugs/jquery.VP.min.js"></script>
-<script src="js/form/citydata.js"></script>
 <script>ibase.load('js/index.js');</script>
 </body>
 </html>

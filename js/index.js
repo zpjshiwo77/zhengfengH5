@@ -52,7 +52,7 @@ $(document).ready(function () {
 
 	function sound_creat() {
 		document.removeEventListener("WeixinJSBridgeReady", sound_creat);
-		ibgm.init({ src: 'audio/bgm.mp3', autoplay: true });
+		ibgm.init({ src: 'audio/bgm2.mp3', autoplay: true });
 	}//end func
 
 
@@ -98,7 +98,7 @@ $(document).ready(function () {
 		loader.addImage('images/peopleBox/people/lyb.png');
 		loader.addImage('images/peopleBox/people/ml.png');
 		loader.addImage('images/peopleBox/people/pyd.png');
-		loader.addImage('images/peopleBox/people/rq.png');
+		loader.addImage('images/peopleBox/people/rq3.png');
 		loader.addImage('images/peopleBox/people/tl.png');
 		loader.addImage('images/peopleBox/people/tnw.png');
 		loader.addImage('images/peopleBox/people/xwb.png');
@@ -113,6 +113,7 @@ $(document).ready(function () {
 		loader.addImage('images/mapBox/bg.jpg');
 		loader.addImage('images/mapBox/btn.png');
 		loader.addImage('images/mapBox/map.png');
+		loader.addImage('images/mapBox/ar.png');
 		loader.addImage('images/mapBox/title.png');
 		loader.addImage('images/indexBox/bg.jpg');
 		loader.addImage('images/indexBox/tips1.png');
@@ -149,8 +150,8 @@ $(document).ready(function () {
 
 	function load_video() {
 		var loader = new PxLoader();
-		for (var i = 0; i < 429; i++) {
-			loader.addImage('images/video/' + i + '.jpg');
+		for (var i = 0; i < 272; i++) {
+			loader.addImage('images/video2/' + i + '.jpg');
 		}
 
 
@@ -190,6 +191,7 @@ $(document).ready(function () {
 	var bulletBox = $(".bulletBox");
 	var bulletEles = [];
 	var bulletAnimeFlag = false;
+	var uploadAudioFlag = false;
 
 	var myName = "";
 	var myProvince = "";
@@ -234,6 +236,7 @@ $(document).ready(function () {
 		indexBox.on("swipeup", showScheduleBox);
 
 		scheduleBox.on("swipeup", showPeopleBox);
+		scheduleBox.on("swipedown", backIndexBox);
 
 		// p1.on("swipeleft", showPeople2);
 		// p2.on("swiperight", showPeople1);
@@ -241,7 +244,12 @@ $(document).ready(function () {
 		peopleBox1.on("click", ".block", showPeopleDetail);
 
 		peopleBox.on("swipeup", showPeopleBox1);
+		peopleBox.on("swipedown", backScheduleBox);
 		peopleBox1.on("swipeup", showMoreBox);
+		peopleBox1.on("swipedown", backPeopleBox);
+		moreBox.on("swipedown", backPeopleBox1);
+
+		videoBox.on("swipeup", VideoEnded);
 
 		mapBox.find(".btn").on("touchend", showFormBox);
 
@@ -271,7 +279,7 @@ $(document).ready(function () {
 
 		areaBox.find(".btn").on("touchend", backToResultBox);
 
-		rankBox.find(".hearBtn").on("touchend", showChoseBox);
+		rankBox.find(".hearBtn").on("touchend", backToResultBox);
 
 		myAudio.addEventListener("ended", function () {
 			$(".audioblock .audio").removeClass("playing");
@@ -281,11 +289,34 @@ $(document).ready(function () {
 	}
 
 	/**
+	 * 返回日程页面
+	 */
+	function backScheduleBox() {
+		pageTransition(peopleBox, scheduleBox, -1);
+	}
+
+	/**
+	 * 返回人物页面
+	 */
+	function backPeopleBox() {
+		pageTransition(peopleBox1, peopleBox, -1);
+	}
+
+	/**
+	 * 返回人物页面
+	 */
+	function backPeopleBox1() {
+		pageTransition(moreBox, peopleBox1, -1);
+	}
+
+	/**
 	 * 返回结果页面
 	 */
 	function backToResultBox() {
-		icom.fadeIn(resultBox);
-		icom.fadeOut(areaBox);
+		icom.fadeIn(resultBox,500,function(){
+			areaBox.hide();
+			rankBox.hide();
+		});
 	}
 
 	/**
@@ -388,9 +419,10 @@ $(document).ready(function () {
 	 * 选择器初始化
 	 */
 	function selectInit(box) {
+		var cityData = ["武汉","上海","广州","杭州","成都","长沙","天津","郑州","呼和浩特","合肥","北京"];
 		var cont = "";
 		for (var i = 0; i < cityData.length; i++) {
-			cont += '<option value="' + cityData[i].label + '" >' + cityData[i].label + '</option>';
+			cont += '<option value="' + cityData[i] + '" >' + cityData[i] + '</option>';
 		}
 		box.append(cont);
 	}
@@ -460,6 +492,9 @@ $(document).ready(function () {
 	 * 显示分享页面
 	 */
 	function showShareBox() {
+		if(!uploadAudioFlag){
+			uploadVoice();
+		}
 		icom.popOn(shareBox);
 	}
 
@@ -492,6 +527,7 @@ $(document).ready(function () {
 					icom.alert("上传完成");
 					shareChange();
 					loadBox.hide();
+					uploadAudioFlag = true;
 				})
 			}
 		});
@@ -587,20 +623,28 @@ $(document).ready(function () {
 		myVideo.VP({
 			debug: false,
 			autoPlay: true,
-			total: 428,
-			time: 28,
-			// audio:"audio/bgm.mp3",
-			// mode: 2,
-			path: "images/video/",
+			total: 271,
+			time: 18,
+			audio: "audio/audio.mp3",
+			mode: 2,
+			path: "images/video2/",
+			scaleMode:"fixedWidth",
 			onPlay: function () {
 				console.log('onPlay gif');
 			},
-			onEnd: function () {
-				showMapBox();
-				ibgm.play();
-			}
+			onEnd: VideoEnded
+
 		});
 		bulletInit();
+	}
+
+	/**
+	 * 视频播放结束
+	 */
+	function VideoEnded() {
+		showMapBox();
+		ibgm.play();
+		myVideo.destroy();
 	}
 
 	function bulletInit() {
@@ -654,7 +698,9 @@ $(document).ready(function () {
 	 */
 	function showMapBox() {
 		mapBox.show();
-		icom.fadeOut(videoBox);
+		videoBox.transition({y:"-100%"},function(){
+			videoBox.hide();
+		})
 		bulletAnimeFlag = false;
 	}
 
@@ -689,6 +735,13 @@ $(document).ready(function () {
 	}
 
 	/**
+	 * 返回首页
+	 */
+	function backIndexBox() {
+		pageTransition(scheduleBox, indexBox, -1);
+	}
+
+	/**
 	 * 显示人物页面
 	 */
 	function showPeopleBox() {
@@ -697,40 +750,10 @@ $(document).ready(function () {
 	}
 
 	/**
-	 * 显示人物第二页面
-	 */
-	function showPeople2() {
-		if (pageTransitionFlag) {
-			pageTransitionFlag = false;
-			p1.transition({ x: "-100%" }, 500, function () {
-				p1.hide();
-				pageTransitionFlag = true;
-			});
-			p2.show().css({ x: "100%" })
-				.transition({ x: "0" }, 500);
-		}
-	}
-
-	/**
-	 * 显示人物第一页面
-	 */
-	function showPeople1() {
-		if (pageTransitionFlag) {
-			pageTransitionFlag = false;
-			p2.transition({ x: "100%" }, 500, function () {
-				p2.hide();
-				pageTransitionFlag = true;
-			});
-			p1.show().css({ x: "-100%" })
-				.transition({ x: "0" }, 500);
-		}
-	}
-
-	/**
 	 * 初始化
 	 */
 	function peoplesInit() {
-		var pa = ["glx", "ayyc", "rq", "jln", "yl", "pyd", "cll", "tnw", "xwb", "lyb", "tl", "jwp"];
+		var pa = ["glx", "ayyc", "rq3", "jln", "yl", "pyd", "cll", "tnw", "xwb", "lyb", "tl", "jwp"];
 		var pb = ["ywy", "lxy", "zzg", "ml", "yzl", "yhj", "lcj", "yp", "dw"];
 		var cont1 = "";
 		var cont2 = "";
@@ -747,16 +770,17 @@ $(document).ready(function () {
 	/**
 	 * 页面过渡
 	 */
-	function pageTransition(prev, next) {
+	function pageTransition(prev, next, dir) {
+		var d = dir || 1;
 		if (pageTransitionFlag) {
 			pageTransitionFlag = false;
-			prev.transition({ y: "-100%" }, 800, function () {
+			prev.transition({ y: (-d * 100) + "%" }, 500, function () {
 				prev.hide();
 				pageTransitionFlag = true;
-				$(".bgmBtn").addClass("sp");
+				if (!$(".bgmBtn").hasClass("sp")) $(".bgmBtn").addClass("sp");
 			});
-			next.show().css({ y: "100%" })
-				.transition({ y: "0" }, 800);
+			next.show().css({ y: (d * 100) + "%" })
+				.transition({ y: "0" }, 500);
 		}
 	}
 

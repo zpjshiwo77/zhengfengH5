@@ -7,6 +7,15 @@
 	100%{opacity: 0.3;}
 }
 
+.updowning2{
+	-webkit-animation: updowning2 1s ease infinite;
+}
+@-webkit-keyframes updowning2{
+	0%{transform: translate(0,0);opacity: 1;}
+	50%{transform: translate(0,-0.05rem);opacity: 0.6;}
+	100%{transform: translate(0,0);opacity: 1;}
+}
+
 .breathing{
 	-webkit-animation: breathing 1.5s ease infinite;
 }
@@ -22,4 +31,44 @@
 @-webkit-keyframes playing{
 	0%{background-position: 0 0;}
 	100%{background-position: 0 -1.47rem;}
+}
+
+.scaleing{
+	-webkit-animation: scaleing 0.7s 0.2s ease forwards;
+}
+@-webkit-keyframes scaleing{
+	0%{transform: scale(0,0);opacity: 0;}
+	100%{transform: scale(1,1);opacity: 1;}
+}
+
+.showing1{
+	-webkit-animation: showing1 0.7s 0.4s ease forwards;
+}
+@-webkit-keyframes showing1{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+.showing2{
+	-webkit-animation: showing2 0.7s 0.5s ease forwards;
+}
+@-webkit-keyframes showing2{
+	0%{transform: translate(0,0.8rem);opacity: 0;}
+	100%{transform: translate(0,0);opacity: 1;}
+}
+
+.showing3{
+	-webkit-animation: showing3 0.7s 0.5s ease forwards;
+}
+@-webkit-keyframes showing3{
+	0%{transform: translate(-0.8rem,0);opacity: 0;}
+	100%{transform: translate(0,0);opacity: 1;}
+}
+
+.showing4{
+	-webkit-animation: showing4 0.7s 0.5s ease forwards;
+}
+@-webkit-keyframes showing4{
+	0%{transform: translate(0,-0.8rem);opacity: 0;}
+	100%{transform: translate(0,0);opacity: 1;}
 }
