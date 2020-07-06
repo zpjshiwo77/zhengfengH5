@@ -8,7 +8,7 @@ $(document).ready(function () {
 	var openId = icom.getQueryString("openid");
 	var voiceId = icom.getQueryString("vid");
 
-	if (os.weixin && !openId && !voiceId) location.href = "https://wechat.dhteam.net/lillysec/Wapi/getopenid.ashx?debug=1";
+	if (os.weixin && !openId && !voiceId) location.href = "https://wechat.dhteam.net/lillysec/Wapi/getopenid.ashx";
 
 	//----------------------------------------页面初始化----------------------------------------
 	icom.init(init);//初始化
