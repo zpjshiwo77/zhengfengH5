@@ -24,9 +24,9 @@ $(document).ready(function () {
 		});
 		wxUser.init({
 			shareInfo: {
-				title: "争锋",
-				friend: '第十二届礼来糖尿病争锋论坛',
-				timeline: '第十二届礼来糖尿病争锋论坛'
+				title: "争锋独家频道",
+				friend: '最新最全的争锋情报在这礼，点开Get更多详细资讯！',
+				timeline: '最新最全的争锋情报在这礼，点开Get更多详细资讯！'
 			}
 		});
 	}//edn func
@@ -87,27 +87,27 @@ $(document).ready(function () {
 		loader.addImage('images/peopleBox/pattern.png');
 		loader.addImage('images/peopleBox/tips.png');
 		loader.addImage('images/peopleBox/title.png');
-		loader.addImage('images/peopleBox/people/ayyc.png');
-		loader.addImage('images/peopleBox/people/cll.png');
-		loader.addImage('images/peopleBox/people/dw.png');
-		loader.addImage('images/peopleBox/people/glx.png');
-		loader.addImage('images/peopleBox/people/jln.png');
-		loader.addImage('images/peopleBox/people/jwp.png');
-		loader.addImage('images/peopleBox/people/lcj.png');
-		loader.addImage('images/peopleBox/people/lxy.png');
-		loader.addImage('images/peopleBox/people/lyb.png');
-		loader.addImage('images/peopleBox/people/ml.png');
-		loader.addImage('images/peopleBox/people/pyd.png');
-		loader.addImage('images/peopleBox/people/rq3.png');
-		loader.addImage('images/peopleBox/people/tl.png');
-		loader.addImage('images/peopleBox/people/tnw.png');
-		loader.addImage('images/peopleBox/people/xwb.png');
-		loader.addImage('images/peopleBox/people/yhj.png');
-		loader.addImage('images/peopleBox/people/yl.png');
-		loader.addImage('images/peopleBox/people/yp.png');
-		loader.addImage('images/peopleBox/people/ywy.png');
-		loader.addImage('images/peopleBox/people/yzl.png');
-		loader.addImage('images/peopleBox/people/zzg.png');
+		loader.addImage('images/peopleBox/people2/ayyc.png');
+		loader.addImage('images/peopleBox/people2/cll.png');
+		loader.addImage('images/peopleBox/people2/dw.png');
+		loader.addImage('images/peopleBox/people2/glx.png');
+		loader.addImage('images/peopleBox/people2/jln.png');
+		loader.addImage('images/peopleBox/people2/jwp.png');
+		loader.addImage('images/peopleBox/people2/lcj.png');
+		loader.addImage('images/peopleBox/people2/lxy.png');
+		loader.addImage('images/peopleBox/people2/lyb.png');
+		loader.addImage('images/peopleBox/people2/ml.png');
+		loader.addImage('images/peopleBox/people2/pyd.png');
+		loader.addImage('images/peopleBox/people2/rq.png');
+		loader.addImage('images/peopleBox/people2/tl.png');
+		loader.addImage('images/peopleBox/people2/tnw.png');
+		loader.addImage('images/peopleBox/people2/xwb.png');
+		loader.addImage('images/peopleBox/people2/yhj.png');
+		loader.addImage('images/peopleBox/people2/yl.png');
+		loader.addImage('images/peopleBox/people2/yp.png');
+		loader.addImage('images/peopleBox/people2/ywy.png');
+		loader.addImage('images/peopleBox/people2/yzl.png');
+		loader.addImage('images/peopleBox/people2/zzg.png');
 		loader.addImage('images/myAudioBox/logo.png');
 		loader.addImage('images/myAudioBox/title.png');
 		loader.addImage('images/mapBox/bg.jpg');
@@ -635,7 +635,7 @@ $(document).ready(function () {
 			onEnd: VideoEnded
 
 		});
-		bulletInit();
+		// bulletInit();
 	}
 
 	/**
@@ -723,7 +723,7 @@ $(document).ready(function () {
 	 */
 	function showPeopleDetail() {
 		var val = $(this).data("val");
-		peopleDetail.find(".detail")[0].src = "images/peopleBox/people/" + val + ".png";
+		peopleDetail.find(".detail")[0].src = "images/peopleBox/people2/" + val + ".png";
 		icom.popOn(peopleDetail);
 	}
 
@@ -753,7 +753,7 @@ $(document).ready(function () {
 	 * 初始化
 	 */
 	function peoplesInit() {
-		var pa = ["glx", "ayyc", "rq3", "jln", "yl", "pyd", "cll", "tnw", "xwb", "lyb", "tl", "jwp"];
+		var pa = ["glx", "ayyc", "rq", "jln", "yl", "pyd", "cll", "tnw", "xwb", "lyb", "tl", "jwp"];
 		var pb = ["ywy", "lxy", "zzg", "ml", "yzl", "yhj", "lcj", "yp", "dw"];
 		var cont1 = "";
 		var cont2 = "";
