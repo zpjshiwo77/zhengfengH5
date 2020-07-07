@@ -118,7 +118,7 @@ a.bgmBtn.sp{
 	top: 45%;
 	left: 0;
 	width: 100%;
-	height: 6.5rem;
+	height: 6.6rem;
 	margin-top: -3.25rem;
 }
 #indexBox .cont .title{
@@ -130,7 +130,7 @@ a.bgmBtn.sp{
 }
 #indexBox .cont .tips1{
 	position: absolute;
-	top: 3.5rem;
+	top: 4.05rem;
 	left: 50%;
 	width: 4.48rem;
 	margin-left: -2.24rem;
@@ -143,7 +143,7 @@ a.bgmBtn.sp{
 	margin-left: -1.5rem;
 }
 #indexBox .cont .arrow{
-	top: 4.5rem;
+	top: 5.3rem;
 }
 /* indexBox end */
 
@@ -154,7 +154,7 @@ a.bgmBtn.sp{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 6.63rem;
+	width: 6.65rem;
 	transform: translate(-50%, -50%);
 }
 /* scheduleBox end */
@@ -273,7 +273,7 @@ a.bgmBtn.sp{
 	top: 50%;
 	left: 0;
 	width: 100%;
-	height: 4.8rem;
+	height: 5.31rem;
 	margin-top: -2.4rem;
 }
 #moreBox .cont .title{
@@ -292,7 +292,7 @@ a.bgmBtn.sp{
 }
 #moreBox .cont .btn{
 	position: absolute;
-	top: 2.6rem;
+	top: 3.3rem;
 	left: 50%;
 	width: 1.6rem;
 	height: 1.02rem;
