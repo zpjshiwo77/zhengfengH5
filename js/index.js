@@ -87,27 +87,27 @@ $(document).ready(function () {
 		loader.addImage('images/peopleBox/pattern.png');
 		loader.addImage('images/peopleBox/tips.png');
 		loader.addImage('images/peopleBox/title.png');
-		loader.addImage('images/peopleBox/people2/ayyc.png');
-		loader.addImage('images/peopleBox/people2/cll.png');
-		loader.addImage('images/peopleBox/people2/dw.png');
-		loader.addImage('images/peopleBox/people2/glx.png');
-		loader.addImage('images/peopleBox/people2/jln.png');
-		loader.addImage('images/peopleBox/people2/jwp.png');
-		loader.addImage('images/peopleBox/people2/lcj.png');
-		loader.addImage('images/peopleBox/people2/lxy.png');
-		loader.addImage('images/peopleBox/people2/lyb.png');
-		loader.addImage('images/peopleBox/people2/ml.png');
-		loader.addImage('images/peopleBox/people2/pyd.png');
-		loader.addImage('images/peopleBox/people2/rq.png');
-		loader.addImage('images/peopleBox/people2/tl.png');
-		loader.addImage('images/peopleBox/people2/tnw.png');
-		loader.addImage('images/peopleBox/people2/xwb.png');
-		loader.addImage('images/peopleBox/people2/yhj.png');
-		loader.addImage('images/peopleBox/people2/yl.png');
-		loader.addImage('images/peopleBox/people2/yp.png');
-		loader.addImage('images/peopleBox/people2/ywy.png');
-		loader.addImage('images/peopleBox/people2/yzl.png');
-		loader.addImage('images/peopleBox/people2/zzg.png');
+		loader.addImage('images/peopleBox/people3/ayyc.png');
+		loader.addImage('images/peopleBox/people3/cll.png');
+		loader.addImage('images/peopleBox/people3/dw.png');
+		loader.addImage('images/peopleBox/people3/glx.png');
+		loader.addImage('images/peopleBox/people3/jln.png');
+		loader.addImage('images/peopleBox/people3/jwp.png');
+		loader.addImage('images/peopleBox/people3/lcj.png');
+		loader.addImage('images/peopleBox/people3/lxy.png');
+		loader.addImage('images/peopleBox/people3/lyb.png');
+		loader.addImage('images/peopleBox/people3/ml.png');
+		loader.addImage('images/peopleBox/people3/pyd.png');
+		loader.addImage('images/peopleBox/people3/rq.png');
+		loader.addImage('images/peopleBox/people3/tl.png');
+		loader.addImage('images/peopleBox/people3/tnw.png');
+		loader.addImage('images/peopleBox/people3/xwb.png');
+		loader.addImage('images/peopleBox/people3/yhj.png');
+		loader.addImage('images/peopleBox/people3/yl.png');
+		loader.addImage('images/peopleBox/people3/yp.png');
+		loader.addImage('images/peopleBox/people3/ywy.png');
+		loader.addImage('images/peopleBox/people3/yzl.png');
+		loader.addImage('images/peopleBox/people3/zzg.png');
 		loader.addImage('images/myAudioBox/logo.png');
 		loader.addImage('images/myAudioBox/title.png');
 		loader.addImage('images/mapBox/bg.jpg');
@@ -119,6 +119,9 @@ $(document).ready(function () {
 		loader.addImage('images/indexBox/tips1.png');
 		loader.addImage('images/indexBox/tips2.png');
 		loader.addImage('images/indexBox/title.png');
+		loader.addImage('images/codeBox/code.png');
+		loader.addImage('images/codeBox/bg.jpg');
+		loader.addImage('images/codeBox/title.png');
 		loader.addImage('images/formBox/ar.png');
 		loader.addImage('images/formBox/btns.png');
 		loader.addImage('images/formBox/more.png');
@@ -162,6 +165,7 @@ $(document).ready(function () {
 	}//end func
 	//----------------------------------------页面逻辑代码----------------------------------------
 	var indexBox = $("#indexBox");
+	var codeBox = $("#codeBox");
 	var scheduleBox = $("#scheduleBox");
 	var peopleBox = $("#peopleBox");
 	var peopleBox1 = $("#peopleBox2");
@@ -193,6 +197,8 @@ $(document).ready(function () {
 	var bulletAnimeFlag = false;
 	var uploadAudioFlag = false;
 
+	var backBox = "";
+
 	var myName = "";
 	var myProvince = "";
 	var shareVoiceId = "";
@@ -216,6 +222,7 @@ $(document).ready(function () {
 		// DevelopTest();
 		monitor_handler();
 		loadBox.hide();
+		peoplesInit();
 		selectInit($("#province"));
 		selectInit($("#provinceC"));
 		if (voiceId) showMyAudioBox();
@@ -233,12 +240,15 @@ $(document).ready(function () {
 	 * 事件初始化
 	 */
 	function eventInit() {
-		indexBox.on("swipeup", showScheduleBox);
+		indexBox.on("swipeup", showCodeBox);
+
+		codeBox.on("swipeup", showScheduleBox);
+		codeBox.on("swipedown", backIndexBox);
 
 		scheduleBox.on("swipeup", showPeopleBox);
-		scheduleBox.on("swipedown", backIndexBox);
+		scheduleBox.on("swipedown", backCodeBox);
 
-		// p1.on("swipeleft", showPeople2);
+		// p1.on("swipeleft", showPeople3);
 		// p2.on("swiperight", showPeople1);
 		peopleBox.on("click", ".block", showPeopleDetail);
 		peopleBox1.on("click", ".block", showPeopleDetail);
@@ -251,7 +261,8 @@ $(document).ready(function () {
 
 		videoBox.on("swipeup", VideoEnded);
 
-		mapBox.find(".btn").on("touchend", showFormBox);
+		mapBox.find(".showBtn").on("touchend", showFormBox);
+		mapBox.find(".viewBtn").on("touchend", showChoseBox);
 
 		formBox.find(".closeBtn").on("touchend", closeFormbox);
 		formBox.find(".okBtn").on("touchend", confrimInfo);
@@ -313,7 +324,8 @@ $(document).ready(function () {
 	 * 返回结果页面
 	 */
 	function backToResultBox() {
-		icom.fadeIn(resultBox,500,function(){
+		var box = backBox == "resultBox" ? resultBox : mapBox;
+		icom.fadeIn(box,500,function(){
 			areaBox.hide();
 			rankBox.hide();
 		});
@@ -351,6 +363,7 @@ $(document).ready(function () {
 					renderAreaBox(res.msg, province);
 					resultBox.hide();
 					rankBox.hide();
+					mapBox.hide();
 					areaBox.show();
 					areaScroll.refresh();
 					icom.fadeOut(choseBox);
@@ -407,6 +420,7 @@ $(document).ready(function () {
 				renderRankBox(res.msg);
 				resultBox.hide();
 				areaBox.hide();
+				mapBox.hide();
 				rankBox.show();
 				rankScroll.refresh();
 				icom.fadeOut(choseBox);
@@ -502,7 +516,8 @@ $(document).ready(function () {
 	 * 显示选择页面
 	 */
 	function showChoseBox() {
-		icom.fadeIn(choseBox)
+		icom.fadeIn(choseBox);
+		backBox = $(this).data("val");
 	}
 
 	/**
@@ -723,7 +738,7 @@ $(document).ready(function () {
 	 */
 	function showPeopleDetail() {
 		var val = $(this).data("val");
-		peopleDetail.find(".detail")[0].src = "images/peopleBox/people2/" + val + ".png";
+		peopleDetail.find(".detail")[0].src = "images/peopleBox/people3/" + val + ".png";
 		icom.popOn(peopleDetail);
 	}
 
@@ -731,21 +746,34 @@ $(document).ready(function () {
 	 * 显示日程页面
 	 */
 	function showScheduleBox() {
-		pageTransition(indexBox, scheduleBox);
+		pageTransition(codeBox, scheduleBox);
+	}
+
+	/**
+	 * 显示二维码页面
+	 */
+	function showCodeBox(){
+		pageTransition(indexBox, codeBox);
 	}
 
 	/**
 	 * 返回首页
 	 */
 	function backIndexBox() {
-		pageTransition(scheduleBox, indexBox, -1);
+		pageTransition(codeBox, indexBox, -1);
+	}
+
+	/**
+	 * 返回二维码页面
+	 */
+	function backCodeBox(){
+		pageTransition(scheduleBox, codeBox, -1);
 	}
 
 	/**
 	 * 显示人物页面
 	 */
 	function showPeopleBox() {
-		peoplesInit();
 		pageTransition(scheduleBox, peopleBox);
 	}
 
@@ -753,8 +781,8 @@ $(document).ready(function () {
 	 * 初始化
 	 */
 	function peoplesInit() {
-		var pa = ["glx", "ayyc", "rq", "jln", "yl", "pyd", "cll", "tnw", "xwb", "lyb", "tl", "jwp"];
-		var pb = ["ywy", "lxy", "zzg", "ml", "yzl", "yhj", "lcj", "yp", "dw"];
+		var pa = ["glx", "yl", "jwp", "zzg", "ayyc", "jln", "pyd", "rq", "ywy", "lxy", "ml"];
+		var pb = ["ayyc", "cll", "tnw", "xwb", "lyb", "tl", "yzl", "yhj", "lcj", "yp", "dw"];
 		var cont1 = "";
 		var cont2 = "";
 		for (var i = 0; i < pa.length; i++) {

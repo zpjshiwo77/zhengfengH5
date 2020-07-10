@@ -24,11 +24,21 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/common/logo.png" class="logo">
         <img src="images/indexBox/bg.jpg" class="bg">
         <div class="cont">
-            <img src="images/indexBox/title.png?v=2" class="title hide scaleing">
-            <img src="images/indexBox/tips1.png" class="tips1 hide showing2">
+            <img src="images/indexBox/title.png?v=3" class="title hide scaleing">
+            <img src="images/indexBox/tips1.png?v=2" class="tips1 hide showing2">
             <img src="images/common/ar.png" class="arrow">
             <!-- <img src="images/indexBox/tips2.png" class="tips2 hide showing3"> -->
         </div>
+    </section>
+
+    <section id="codeBox" class="none">
+        <img src="images/common/logo.png" class="logo">
+        <img src="images/common/logo2.png" class="logo2">
+        <img src="images/codeBox/bg.jpg" class="bg">
+        <!-- <img src="images/common/ar.png" class="arrow"> -->
+        <img src="images/codeBox/title.png?v=2" class="title showing2 hide">
+        <img src="images/codeBox/code.png" class="code showing1 hide">
+        <img src="images/codeBox/tips.png" class="tips showing1 hide">
     </section>
 
     <section id="scheduleBox" class="none">
@@ -36,7 +46,7 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/common/logo2.png" class="logo2">
         <img src="images/common/bg.jpg" class="bg">
         <img src="images/common/ar.png" class="arrow">
-        <img src="images/scheduleBox/date.png?v=3" class="date showing1 hide">
+        <img src="images/scheduleBox/date.png?v=4" class="date showing1 hide">
     </section>
 
     <section id="peopleBox" class="none peopleBox">
@@ -45,10 +55,10 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/common/bg.jpg" class="bg">
         <img src="images/common/ar.png" class="arrow">
         <div class="cont">
-            <img src="images/peopleBox/title.png" alt="" class="title hide showing2">
-            <div class="peoples hide showing3">
+            <img src="images/peopleBox/title.png?v=2" alt="" class="title hide showing2">
+            <div class="peoples hide showing3 sp">
                 <div class="p1 full">
-                    <img src="images/peopleBox/p1.png?v=3" class="full">
+                    <img src="images/peopleBox/p1.png?v=5" class="full">
                 </div>
                 
             </div>
@@ -62,10 +72,10 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/common/bg.jpg" class="bg">
         <img src="images/common/ar.png" class="arrow">
         <div class="cont">
-            <img src="images/peopleBox/title.png" alt="" class="title hide showing2">
+            <img src="images/peopleBox/title.png?v=2" alt="" class="title hide showing2">
             <div class="peoples hide showing3">
                 <div class="p2 full">
-                    <img src="images/peopleBox/p2.png" class="full">
+                    <img src="images/peopleBox/p2.png?v=6" class="full">
                 </div>
             </div>
             <img src="images/peopleBox/tips.png" alt="" class="tips hide showing3">
@@ -77,11 +87,11 @@ ibase.load('css/anime.css');//无缓存加载文件
         <img src="images/common/logo2.png" class="logo2">
         <img src="images/indexBox/bg.jpg" class="bg">
         <div class="cont">
-            <img src="images/videoBox/title.png?v=2" class="title hide scaleing">
+            <img src="images/videoBox/title.png?v=3" class="title hide scaleing">
             <div class="btn limitBtn breathing" id="videoBtn">
                 <img src="images/videoBox/btn.png" class="full">
             </div>
-            <img src="images/videoBox/tips.png" class="tips hide showing3">
+            <img src="images/videoBox/tips.png?v=2" class="tips hide showing3">
         </div>
     </section>
 
@@ -93,8 +103,11 @@ ibase.load('css/anime.css');//无缓存加载文件
             <img src="images/mapBox/title.png" class="title">
             <img src="images/mapBox/map.png?v=2" class="map">
             <img src="images/mapBox/ar.png" class="map updowning2">
-            <div class="btn limitBtn breathing">
-                <img src="images/mapBox/btn.png" class="full">
+            <div class="btn limitBtn showBtn">
+                <img src="images/mapBox/btn.png?v=2" class="full">
+            </div>
+            <div class="btn limitBtn viewBtn" data-val="mapBox">
+                <img src="images/mapBox/btn2.png" class="full">
             </div>
         </div>
     </section>
@@ -137,7 +150,7 @@ ibase.load('css/anime.css');//无缓存加载文件
                 <div class="btn limitBtn okBtn"><img src="images/resultBox/ok.png" class="full"></div>
             </div>
             <div class="btnBox">
-                <div class="btn limitBtn moreBtn"><img src="images/resultBox/b1.png" class="full"></div>
+                <div class="btn limitBtn moreBtn" data-val="resultBox"><img src="images/resultBox/b1.png" class="full"></div>
                 <div class="btn limitBtn shareBtn"><img src="images/resultBox/b2.png" class="full"></div>
             </div>
         </div>
